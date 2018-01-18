@@ -1,0 +1,90 @@
+{
+  "name": "vue-starter-kit",
+  "version": "1.0.0",
+  "description": "Vue-starter-kit - the template for fast start your app",
+  "main": "index.js",
+  "scripts": {
+    "heroku-postbuild": "npm run build",
+    "dev": "nodemon --config nodemon.json --watch server --exec node server/index.js",
+    "start": "node server/index.js",
+    "build": "node build/build.js",
+    "pm2": "pm2 start ecosystem.config.js",
+    "test": "node spec/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Luummii/vue-starter-kit"
+  },
+  "author": "Andrey Zimin (Luummii)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Luummii/vue-starter-kit/issues"
+  },
+  "homepage": "https://github.com/Luummii/vue-starter-kit/blob/master/README.md",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "chalk": "^2.1.0",
+    "compression-webpack-plugin": "^1.1.3",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.6",
+    "friendly-errors-webpack-plugin": "^1.6.1",
+    "html-webpack-plugin": "^2.30.1",
+    "jasmine": "^2.8.0",
+    "koa-webpack-middleware": "^1.0.7",
+    "nodemon": "^1.14.7",
+    "optimize-css-assets-webpack-plugin": "^3.2.0",
+    "ora": "^1.3.0",
+    "progress-bar-webpack-plugin": "^1.10.0",
+    "style-loader": "^0.19.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
+    "url-loader": "^0.6.2",
+    "vue-loader": "^13.6.2",
+    "vue-template-compiler": "^2.5.13",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7",
+    "webpack-merge": "^4.1.1"
+  },
+  "dependencies": {
+    "axios": "^0.17.1",
+    "babylonjs": "^3.2.0-alpha4",
+    "config": "^1.29.0",
+    "knex": "^0.13.0",
+    "koa": "^2.4.1",
+    "koa-body": "^2.5.0",
+    "koa-csrf": "^3.0.6",
+    "koa-favicon": "^2.0.0",
+    "koa-generic-session-knex": "^1.0.1",
+    "koa-helmet": "^3.3.0",
+    "koa-logger": "^3.1.0",
+    "koa-router": "^7.3.0",
+    "koa-session": "^5.5.1",
+    "koa-static": "^4.0.2",
+    "koa-static-server": "^1.3.2",
+    "koa2-connect-history-api-fallback": "0.0.6",
+    "pg": "^7.4.0",
+    "vue": "^2.5.13",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1",
+    "vuex-router-sync": "^5.0.0",
+    "winston-color": "^1.0.0"
+  },
+  "engines": {
+    "node": "8.9.0",
+    "npm": "5.5.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
