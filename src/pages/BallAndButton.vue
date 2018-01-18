@@ -26,17 +26,17 @@ export default {
     const light2 = new BABYLON.PointLight('light2', new BABYLON.Vector3(0, 1, -1), scene)
     const sphere = new BABYLON.MeshBuilder.CreateSphere('sphere', { diameter: .5 }, scene)
 
-    var advancedTexture = new GUI.AdvancedDynamicTexture.CreateFullscreenUI("myUI")
-    var button1 = new GUI.Button.CreateSimpleButton("but1", "Click Me");
+    const advancedTexture = new GUI.AdvancedDynamicTexture.CreateFullscreenUI("myUI")
+    const button1 = new GUI.Button.CreateSimpleButton("but1", "Click Me")
     button1.width = "150px"
-    button1.height = "40px";
-    button1.color = "white";
-    button1.cornerRadius = 20;
-    button1.background = "green";
+    button1.height = "40px"
+    button1.color = "white"
+    button1.cornerRadius = 20
+    button1.background = "green"
     button1.onPointerUpObservable.add(function() {
-        alert("you did it!");
-    });
-    advancedTexture.addControl(button1);   
+        alert("you did it!")
+    })
+    advancedTexture.addControl(button1)  
 
     // Зацыкленный рендеринг сцены
     engine.runRenderLoop(() => {

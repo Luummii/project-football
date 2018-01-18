@@ -40,5 +40,5 @@ export default class Field {
     pointCentral.position = new BABYLON.Vector3(0, .05, 0)
   }
 
-  click() { console.log('CLICK') }
+  click() { console.log('Field CLICK') }
 }

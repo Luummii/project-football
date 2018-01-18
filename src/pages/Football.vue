@@ -1,21 +1,25 @@
 <template>
   <div class="container">
     <canvas class="renderCanvas"></canvas>
+    <control-panel v-on:click="click"></control-panel>
   </div>
 </template>
 
 <script>
 import * as BABYLON from 'babylonjs'
-import * as GUI from 'babylonjs-gui'
 import 'babylonjs-materials'
 import Field from '../js/Field'
 import Player from '../js/Player'
+import ControlPanel from '../components/ControlPanel.vue'
 
 export default {
   data () {
     return {
-      
+      player: null
     }
+  },
+  components: {
+    ControlPanel
   },
   mounted() {  
     const canvas = document.getElementsByClassName('renderCanvas')[0]
@@ -30,17 +34,21 @@ export default {
     const field = new Field(scene)   
     field.click()
 
-    const player = new Player(scene, 0, 0, 1.7)       
+    this.player = new Player(scene, 0, 0, 1.7)           
 
     // Зацыкленный рендеринг сцены
-    engine.runRenderLoop(() => {
-      player.click()
+    engine.runRenderLoop(() => {      
       scene.render()
     }) 
 
     window.addEventListener('resize', () => {
       engine.resize()
     }) 
+  },
+  methods: {
+    click () {      
+      this.player.click()
+    }
   }
 }
 </script>
