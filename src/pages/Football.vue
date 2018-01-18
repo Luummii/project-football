@@ -25,14 +25,12 @@ export default {
     const camera = new BABYLON.ArcRotateCamera('Camera', Math.PI / 3, Math.PI / 3, 100, new BABYLON.Vector3(0, 10, 20), scene)  
     camera.attachControl(canvas, true)
 
-    const light1 = new BABYLON.DirectionalLight('light', new BABYLON.Vector3(-2, -5, 2), scene)
-    const light2 = new BABYLON.PointLight('light', new BABYLON.Vector3(2, -5, -2), scene)
-
+    const light = new BABYLON.HemisphericLight('light', new BABYLON.Vector3(-1, 5, 2), scene)
     
     const field = new Field(scene)   
     field.click()
 
-    const player = new Player(scene, new BABYLON.Vector3(0, .02, 0))       
+    const player = new Player(scene, 0, 0, 1.7)       
 
     // Зацыкленный рендеринг сцены
     engine.runRenderLoop(() => {
