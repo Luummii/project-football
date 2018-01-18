@@ -9,6 +9,7 @@ import * as BABYLON from 'babylonjs'
 import * as GUI from 'babylonjs-gui'
 import 'babylonjs-materials'
 import Field from '../js/Field'
+import Player from '../js/Player'
 
 export default {
   data () {
@@ -31,8 +32,11 @@ export default {
     const field = new Field(scene)   
     field.click()
 
+    const player = new Player(scene, new BABYLON.Vector3(0, .02, 0))       
+
     // Зацыкленный рендеринг сцены
     engine.runRenderLoop(() => {
+      player.click()
       scene.render()
     }) 
 
