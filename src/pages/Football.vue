@@ -21,7 +21,7 @@ export default {
     const engine = new BABYLON.Engine(canvas, true) 
 
     const scene = new BABYLON.Scene(engine)      
-    const camera = new BABYLON.ArcRotateCamera('Camera', Math.PI / 3, Math.PI / 3, 400, new BABYLON.Vector3(0, 10, 20), scene)  
+    const camera = new BABYLON.ArcRotateCamera('Camera', Math.PI / 3, Math.PI / 3, 100, new BABYLON.Vector3(0, 10, 20), scene)  
     camera.attachControl(canvas, true)
 
     const light1 = new BABYLON.DirectionalLight('light', new BABYLON.Vector3(-2, -5, 2), scene)
