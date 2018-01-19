@@ -11,9 +11,9 @@ export default class Player {
     this.player.material = matPlayer
   }
 
-  click () { 
+  got (x, z) { 
     console.log('CLICK') 
-    this.player.position.z += .01
-    this.player.position.x += .01
+    this.player.position.z += .1
+    this.player.position.x += .1
   }
 }

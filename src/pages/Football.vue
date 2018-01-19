@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <canvas class="renderCanvas"></canvas>
-    <control-panel v-on:click="click"></control-panel>
+    <control-panel v-on:go="go"></control-panel>
   </div>
 </template>
 
@@ -15,7 +15,8 @@ import ControlPanel from '../components/ControlPanel.vue'
 export default {
   data () {
     return {
-      player: null
+      player: [],
+      tasks: []
     }
   },
   components: {
@@ -34,8 +35,13 @@ export default {
     const field = new Field(scene)   
     field.click()
 
-    this.player = new Player(scene, 0, 0, 1.7)           
+    this.player = [new Player(scene, 0, 0, 1.7), new Player(scene, 5, 2, 1.7)]    
 
+    scene.onPointerDown = (evt, pickResult) => {                      
+      if (pickResult.hit && pickResult.pickedMesh.id === 'player') {        
+        console.log(this.player)
+      }
+    }
     // Зацыкленный рендеринг сцены
     engine.runRenderLoop(() => {      
       scene.render()
@@ -46,8 +52,10 @@ export default {
     }) 
   },
   methods: {
-    click () {      
-      this.player.click()
+    go () {      
+      for (i = 0; i < this.player.length; i++) {
+        this.player[i].go(this.x, this.z)
+      }
     }
   }
 }

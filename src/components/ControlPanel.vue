@@ -2,7 +2,7 @@
   <nav> 
     <ul>
       <li>
-        <button @click="$emit('click')">Shot</button>
+        <button @click="$emit('go')">GO</button>
       </li>
     </ul>    
   </nav>
